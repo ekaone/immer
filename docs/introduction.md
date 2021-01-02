@@ -26,7 +26,7 @@ The basic idea is that you will apply all your changes to a temporary _draftStat
 
 ![immer-hd.png](/immer/img/immer.png)
 
-Using Immer is like having a personal assistant; he takes a letter (the current state) and gives you a copy (draft) to jot changes onto. Once you are done, the assistant will take your draft and produce the real immutable, final letter for you (the next state).
+Using Immer is like having a personal assistant; he takes a letter (the current state) and gives you a copy (draft) to not changes onto. Once you are done, the assistant will take your draft and produce the real immutable, final letter for you (the next state).
 
 ## Quick Example
 
@@ -44,7 +44,7 @@ const baseState = [
 	}
 ]
 
-const nextState = produce(baseState, draftState => {
+const nextState = produce(baseState, (draftState) => {
 	draftState.push({todo: "Tweet about it"})
 	draftState[1].done = true
 })
